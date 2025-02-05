@@ -40,6 +40,7 @@
             this.ar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btfelv = new System.Windows.Forms.Button();
             this.lberedmeny = new System.Windows.Forms.Label();
+            this.btmodosit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgadatok)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,6 +69,7 @@
             this.txkeres.Name = "txkeres";
             this.txkeres.Size = new System.Drawing.Size(100, 20);
             this.txkeres.TabIndex = 2;
+            this.txkeres.TextChanged += new System.EventHandler(this.txkeres_TextChanged);
             // 
             // dgadatok
             // 
@@ -138,12 +140,24 @@
             this.lberedmeny.Size = new System.Drawing.Size(27, 13);
             this.lberedmeny.TabIndex = 5;
             this.lberedmeny.Text = "asd";
+            this.lberedmeny.Visible = false;
+            // 
+            // btmodosit
+            // 
+            this.btmodosit.Location = new System.Drawing.Point(635, 12);
+            this.btmodosit.Name = "btmodosit";
+            this.btmodosit.Size = new System.Drawing.Size(172, 159);
+            this.btmodosit.TabIndex = 6;
+            this.btmodosit.Text = "Módosítás";
+            this.btmodosit.UseVisualStyleBackColor = true;
+            this.btmodosit.Click += new System.EventHandler(this.btmodosit_Click);
             // 
             // frmfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 450);
+            this.Controls.Add(this.btmodosit);
             this.Controls.Add(this.lberedmeny);
             this.Controls.Add(this.btfelv);
             this.Controls.Add(this.dgadatok);
@@ -175,6 +189,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ar;
         private System.Windows.Forms.Button btfelv;
         private System.Windows.Forms.Label lberedmeny;
+        private System.Windows.Forms.Button btmodosit;
     }
 }
 

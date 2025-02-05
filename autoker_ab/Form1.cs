@@ -16,7 +16,12 @@ namespace autoker_ab
         void betoltes()
         {
             dgadatok.Rows.Clear();
-            string lekerdezes = "select * from autoker";
+            string keresett = "";
+            if(txkeres.Text.Length > 0)
+            {
+                keresett = " where tipus like '" + txkeres.Text + "%'";
+            }
+            string lekerdezes = "select * from autoker"+keresett;
             Adatbazis ab = new Adatbazis(lekerdezes);
             while (ab.Dr.Read())
             {
@@ -26,6 +31,7 @@ namespace autoker_ab
             lekerdezes = "select round(avg(ar),0) as atlag from autoker";
             ab = new Adatbazis(lekerdezes);
             ab.Dr.Read();
+            lberedmeny.Visible = true;
             lberedmeny.Text = "Átlagár: "+ab.Dr["atlag"]+" Ft";
         }
         public frmfo()
@@ -40,7 +46,19 @@ namespace autoker_ab
 
         private void btfelv_Click(object sender, EventArgs e)
         {
+            frmujfelvitel ujfelvetel = new frmujfelvitel();
+            ujfelvetel.ShowDialog();
+        }
 
+        private void txkeres_TextChanged(object sender, EventArgs e)
+        {
+            betoltes();
+        }
+
+        private void btmodosit_Click(object sender, EventArgs e)
+        {
+            frmmodositas modositas = new frmmodositas();
+            modositas.ShowDialog();
         }
     }
 }
