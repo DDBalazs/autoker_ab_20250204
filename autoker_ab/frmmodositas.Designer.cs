@@ -51,7 +51,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lbautoid = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgadatok)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,6 +69,7 @@
             this.dgadatok.Name = "dgadatok";
             this.dgadatok.Size = new System.Drawing.Size(675, 240);
             this.dgadatok.TabIndex = 10;
+            this.dgadatok.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgadatok_CellClick);
             // 
             // autoid
             // 
@@ -112,6 +113,7 @@
             this.txkeres.Name = "txkeres";
             this.txkeres.Size = new System.Drawing.Size(100, 20);
             this.txkeres.TabIndex = 9;
+            this.txkeres.TextChanged += new System.EventHandler(this.txkeres_TextChanged);
             // 
             // label1
             // 
@@ -132,6 +134,7 @@
             this.btelvet.TabIndex = 24;
             this.btelvet.Text = "Elvet";
             this.btelvet.UseVisualStyleBackColor = true;
+            this.btelvet.Click += new System.EventHandler(this.btelvet_Click);
             // 
             // btmentes
             // 
@@ -143,6 +146,7 @@
             this.btmentes.TabIndex = 23;
             this.btmentes.Text = "Mentés";
             this.btmentes.UseVisualStyleBackColor = true;
+            this.btmentes.Click += new System.EventHandler(this.btmentes_Click);
             // 
             // txar
             // 
@@ -150,6 +154,7 @@
             this.txar.Name = "txar";
             this.txar.Size = new System.Drawing.Size(105, 20);
             this.txar.TabIndex = 22;
+            this.txar.TextChanged += new System.EventHandler(this.txar_TextChanged);
             // 
             // txtulajszam
             // 
@@ -157,6 +162,7 @@
             this.txtulajszam.Name = "txtulajszam";
             this.txtulajszam.Size = new System.Drawing.Size(82, 20);
             this.txtulajszam.TabIndex = 21;
+            this.txtulajszam.TextChanged += new System.EventHandler(this.txtulajszam_TextChanged_1);
             // 
             // txszin
             // 
@@ -237,21 +243,20 @@
             this.label7.TabIndex = 25;
             this.label7.Text = "Azonosító:";
             // 
-            // label8
+            // lbautoid
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(82, 281);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(41, 13);
-            this.label8.TabIndex = 26;
-            this.label8.Text = "label8";
+            this.lbautoid.AutoSize = true;
+            this.lbautoid.Location = new System.Drawing.Point(82, 281);
+            this.lbautoid.Name = "lbautoid";
+            this.lbautoid.Size = new System.Drawing.Size(0, 13);
+            this.lbautoid.TabIndex = 26;
             // 
             // frmmodositas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(955, 326);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lbautoid);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btelvet);
             this.Controls.Add(this.btmentes);
@@ -273,6 +278,7 @@
             this.Name = "frmmodositas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adat módosítás";
+            this.Load += new System.EventHandler(this.frmmodositas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgadatok)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -302,6 +308,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbautoid;
     }
 }
